@@ -128,7 +128,7 @@ class Company(Scraper):
             pass
         driver.get(os.path.join(self.linkedin_url, "people"))
 
-        _ = WebDriverWait(driver, 3).until(EC.presence_of_all_elements_located((By.XPATH, '//span[@dir="ltr"]')))
+        _ = WebDriverWait(driver, 3).until(EC.presence_of_all_elements_located((By.CSS_SELECTOR, 'div.scaffold-finite-scroll__content > ul > li.grid')))
 
         driver.execute_script("window.scrollTo(0, Math.ceil(document.body.scrollHeight/2));")
         time.sleep(1)
